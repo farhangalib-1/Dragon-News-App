@@ -1,7 +1,9 @@
+
 import Link from 'next/link'
 import React from 'react'
 import user from '@/assets/user.png'
 import Image from 'next/image'
+
 const Navbar = () => {
   return (
     <div className='flex items-center justify-between w-11/12 mx-auto mt-5.5'>
