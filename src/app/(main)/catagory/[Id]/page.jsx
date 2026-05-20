@@ -1,19 +1,27 @@
+import React from 'react'
 import Link from "next/link";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-
-export default async function Home() {
- const getcatagories = async () =>{
+const NewsCatagory = async ({ params }) => {
+    const {Id} = await params;
+    console.log(Id);
+    
+const getcatagories = async () =>{
   const res = await fetch("https://openapi.programming-hero.com/api/news/categories");
   const data = await res.json();
   return data.data.news_category;
  }
-
+ const getNews = async (Id) =>{
+  const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${Id}`);
+  const data = await res.json();
+  return data.data;
+ }
  const catagories = await getcatagories();
+ const news = await getNews(Id);
+ console.log(news);
  
  
   return (
-  
    <div className="grid grid-cols-12 w-11/12 mx-auto gap-x-6">
     
       <div className="col-span-3">
@@ -28,8 +36,15 @@ export default async function Home() {
         }
         </ul>
       </div>
-      <div className="bg-blue-100 col-span-6">
-        <h1>Dragon news</h1>
+      <div className="col-span-6">
+        <h1 className='font-bold text-xl mb-5'>Dragon News Home</h1>
+        {
+            news.map(news => {
+                return <div key={news._id}>
+                    <h1 className='border px-4 py-3 mb-4 rounded-2xl font-bold' >{news.title}</h1>
+                </div>
+            })
+        }
       </div>
       <div className="col-span-3">
         <div>
@@ -43,5 +58,7 @@ export default async function Home() {
         </div>
       </div>
    </div>
-  );
+  )
 }
+
+export default NewsCatagory
