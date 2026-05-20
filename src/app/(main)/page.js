@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { FaGoogle } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 export default async function Home() {
  const getcatagories = async () =>{
@@ -18,7 +21,9 @@ export default async function Home() {
         <ul className="">
            {
           catagories.map(catagory => {
-            return <li className="text-xl font-semibold px-12.5 py-1.75 border text-center my-5 text-[#9F9F9F]" key={catagory.category_id}>{catagory.category_name}</li>
+            return <li className={`  text-xl font-semibold  border text-center my-5 text-[#9F9F9F]`} key={catagory.category_id}>
+             <Link href={`/category/${catagory.category_id}`} className="px-12.5 py-1.75 block ">{catagory.category_name}</Link>
+              </li>
           })
         }
         </ul>
@@ -26,8 +31,16 @@ export default async function Home() {
       <div className="bg-blue-100 col-span-6">
         <h1>Dragon news</h1>
       </div>
-      <div className="bg-purple-100 col-span-3">
-        <h1>Social links</h1>
+      <div className="col-span-3">
+        <div>
+          <h1 className="text-xl font-bold">Login with</h1>
+          <button className="mt-7  w-full py-1.75 text-blue-500 border border-blue-500 rounded-lg ">
+            <FaGoogle className="inline mr-2" />
+           Login with Google</button>
+          <button className="w-full py-1.75 border border-gray-500 rounded-lg mt-2">
+            <FaGithub className="inline mr-2" />
+            Login with Github</button>
+        </div>
       </div>
    </div>
   );
