@@ -4,7 +4,6 @@ import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 const NewsCatagory = async ({ params }) => {
     const {Id} = await params;
-    console.log(Id);
     
 const getcatagories = async () =>{
   const res = await fetch("https://openapi.programming-hero.com/api/news/categories");
@@ -29,7 +28,7 @@ const getcatagories = async () =>{
         <ul className="">
            {
           catagories.map(catagory => {
-            return <li className={`  text-xl font-semibold  border text-center my-5 text-[#9F9F9F]`} key={catagory.category_id}>
+            return <li className={`${Id === catagory.category_id ? 'bg-[#E7E7E7] text-[#403F3F] rounded-[5px]' : 'text-[#9F9F9F]'} className="px-12.5 py-1.75 text-xl font-semibold text-center my-5`} key={catagory.category_id}>
              <Link href={`/catagory/${catagory.category_id}`} className="px-12.5 py-1.75 block ">{catagory.category_name}</Link>
               </li>
           })
@@ -39,11 +38,11 @@ const getcatagories = async () =>{
       <div className="col-span-6">
         <h1 className='font-bold text-xl mb-5'>Dragon News Home</h1>
         {
-            news.map(news => {
+           news.length>0 ? news.map(news => {
                 return <div key={news._id}>
                     <h1 className='border px-4 py-3 mb-4 rounded-2xl font-bold' >{news.title}</h1>
                 </div>
-            })
+            }) : <p className='text-center text-lg font-semibold'>No news found</p>
         }
       </div>
       <div className="col-span-3">
