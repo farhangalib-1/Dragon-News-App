@@ -1,8 +1,10 @@
 "use client"
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useState } from "react";
 import { useForm } from "react-hook-form"
 const RegisterPage = () => {
+    const [showPassword, setShowPassword] = useState(false);
   const {register, handleSubmit, formState: { errors }} = useForm();
   const handleFormSubmit = async data => {
     const { name, email, password } = data;
@@ -36,8 +38,17 @@ const RegisterPage = () => {
   <input type="email" className="input" placeholder="Email" {...register("email")} />
 
   <label className="label">Password</label>
-  <input type="password" className="input" placeholder="Password" {...register("password", { required: "Password is required", minLength: { value: 8, message: "Password must be at  8 characters" } })} />
+  <input type={showPassword ? "text" : "password"} className="input" placeholder="Password" {...register("password", { required: "Password is required", minLength: { value: 8, message: "Password must be at  8 characters" } })} />
     {errors.password && <span className="text-error">{errors.password.message}</span>}
+  <label className="label cursor-pointer">
+    <input
+      type="checkbox"
+      className="checkbox"
+      checked={showPassword}
+      onChange={() => setShowPassword(!showPassword)}
+    />
+    <span className="label-text">Show Password</span>
+  </label>
   <button className="btn btn-neutral mt-4">Register</button>
   <p className="mt-4">Already have an account? <Link href="/login" className="text-secondary">Login</Link></p>
   <p></p>
