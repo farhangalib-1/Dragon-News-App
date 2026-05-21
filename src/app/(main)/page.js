@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -6,6 +7,7 @@ import { CiBookmark } from "react-icons/ci";
 import { CiShare2 } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
+
 
 export default async function Home() {
  const getcatagories = async () =>{
@@ -20,7 +22,6 @@ const getNews = async () =>{
  }
  const catagories = await getcatagories();
   const news = await getNews();
- 
  
   return (
   
@@ -74,7 +75,7 @@ const getNews = async () =>{
       <div className="col-span-3">
         <div>
           <h1 className="text-xl font-bold">Login with</h1>
-          <button className="btn mt-7  w-full py-1.75 text-blue-500 border border-blue-500 rounded-lg ">
+          <button className="btn mt-7  w-full py-1.75 text-blue-500 border border-blue-500 rounded-lg " >
             <FaGoogle className="inline mr-2" />
            Login with Google</button>
           <button className="btn w-full py-1.75 border border-gray-500 rounded-lg mt-2">

@@ -1,13 +1,69 @@
 import React from 'react'
 import Marquee from "react-fast-marquee";
 const LatestNews = () => {
+  const latestNews = [
+  {
+    id: 1,
+    title: "AI Technology Changing Modern Education",
+    category: "Technology",
+    author: "John Smith",
+    published_date: "2026-05-22",
+    image_url: "https://example.com/images/ai-education.jpg",
+    details:
+      "Artificial intelligence is transforming classrooms by helping students learn faster and teachers manage lessons more efficiently.",
+  },
+  {
+    id: 2,
+    title: "Bangladesh Wins Thrilling Cricket Match",
+    category: "Sports",
+    author: "Rahim Ahmed",
+    published_date: "2026-05-21",
+    image_url: "https://example.com/images/bd-cricket.jpg",
+    details:
+      "Bangladesh secured a dramatic victory in the final over after an incredible batting performance.",
+  },
+  {
+    id: 3,
+    title: "New Smartphone Released With Powerful Camera",
+    category: "Technology",
+    author: "Emily Watson",
+    published_date: "2026-05-20",
+    image_url: "https://example.com/images/smartphone.jpg",
+    details:
+      "The latest flagship smartphone features an advanced AI camera system and long-lasting battery life.",
+  },
+  {
+    id: 4,
+    title: "Global Food Prices Continue to Rise",
+    category: "Economy",
+    author: "David Miller",
+    published_date: "2026-05-19",
+    image_url: "https://example.com/images/food-prices.jpg",
+    details:
+      "Experts say increasing transportation and production costs are affecting food prices worldwide.",
+  },
+  {
+    id: 5,
+    title: "Scientists Discover New Renewable Energy Method",
+    category: "Science",
+    author: "Sophia Lee",
+    published_date: "2026-05-18",
+    image_url: "https://example.com/images/renewable-energy.jpg",
+    details:
+      "Researchers have developed a cleaner and more efficient renewable energy technology for future use.",
+  },
+];
   return (
     <div className='flex justify-center w-11/12 mx-auto gap-4.75 font-bold bg-gray-100 p-4 mt-7.5'>
         <div>
         <button className='bg-[#D72050] px-6.25 py-2.25 text-white '>Latest</button>
         </div>
         <Marquee pauseOnHover={true}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium ab nesciunt fugiat ratione nulla vero id molestiae quibusdam commodi? Voluptatibus, explicabo? Iure atque necessitatibus libero perferendis tenetur ad, provident accusamus praesentium modi excepturi dignissimos quo. Perferendis cupiditate sequi molestias nobis quis itaque fugit eligendi omnis mollitia ipsum aspernatur suscipit, magnam provident harum eveniet non officia ipsam illum? Quasi, autem impedit nihil libero dolore, illo ad vero exercitationem magnam numquam ea, eaque cupiditate expedita. Architecto sunt aperiam, possimus ullam quisquam, molestiae hic ab sed placeat natus voluptas molestias optio repellat rerum officiis consectetur? Asperiores illum velit et doloribus ea, animi reprehenderit eum praesentium incidunt nihil molestias neque cumque tenetur blanditiis officiis dolor quas rem! Reprehenderit saepe ullam doloribus fuga iusto quas. Animi neque vitae nulla ipsa nobis similique praesentium eum quod, labore cumque, unde incidunt velit distinctio iste nesciunt ullam. Doloribus illo fugiat neque odit, veritatis tempora sunt dolores rem esse qui expedita sit facere vel, nisi ut laboriosam in repellat, repudiandae eum quidem porro repellendus ipsa provident veniam? Maxime est temporibus enim necessitatibus tenetur et praesentium aperiam laboriosam expedita perferendis, repellat magnam neque inventore ex, tempora soluta alias a. Sequi, provident vitae maiores vero, labore perspiciatis totam debitis, iusto ipsam a ab pariatur nam excepturi obcaecati fuga? Temporibus quas repudiandae laboriosam magni rerum rem neque modi. Nesciunt debitis voluptatum explicabo corrupti quidem! Itaque molestias neque eveniet officiis sed repudiandae modi rerum, saepe autem impedit, dolorum animi laborum recusandae numquam! Consectetur maiores rerum pariatur facere fuga hic aliquid nulla nostrum possimus beatae? Ratione, nesciunt. Magni inventore asperiores nesciunt nulla aliquid quia corrupti libero natus. Facere, necessitatibus esse? Eaque quae modi cupiditate, excepturi earum incidunt sit temporibus, facere beatae laudantium quidem perferendis molestiae. Aliquam quae molestias ad debitis perferendis necessitatibus odio saepe illo mollitia error praesentium eligendi ducimus eum nam voluptate quisquam pariatur, fugit, accusamus nisi. Rem dolorum rerum unde, nostrum reprehenderit, deleniti optio culpa velit commodi aut voluptatem natus soluta aperiam eaque officiis. Saepe enim debitis natus tempora fuga deleniti, eligendi sit atque veritatis consequatur illo dolorem delectus consequuntur asperiores sunt minus officia eum quam iusto molestias voluptatum. Molestiae qui at aperiam, mollitia quas explicabo! Vitae, officiis. Laboriosam corrupti nisi saepe quaerat. Soluta, magni exercitationem? Soluta rem voluptatum fugiat illo aspernatur molestiae optio ratione assumenda sequi nam harum velit, nesciunt rerum facilis eaque molestias nulla voluptates? Expedita reiciendis repellendus harum dolor tempora iusto in nihil repudiandae error veritatis. Voluptatibus, distinctio reiciendis? Soluta ad, ullam veniam molestiae hic culpa officia quisquam laudantium minima quis! Labore, ipsa fugiat, sapiente esse, laboriosam eaque fuga consequatur facilis incidunt suscipit voluptatum voluptatem cum repudiandae in minima odit dolorum quam. Quia cum, consectetur, sed explicabo repellendus minima adipisci praesentium ut eligendi rerum necessitatibus dolore illum error ad exercitationem officiis. Id minus sapiente voluptate asperiores numquam velit recusandae eveniet saepe doloremque repellendus facilis modi odit laborum rem veniam, illum atque est iure reprehenderit quod in ex error qui nesciunt. Fugiat corporis eveniet sed officiis, obcaecati deserunt quod pariatur placeat id? Fugit vel sint consequuntur eius adipisci. Qui, consequatur numquam tempora amet tenetur molestias eius quod totam dolores earum voluptates aperiam porro consectetur nemo! Possimus corporis voluptas dolore labore animi voluptatem reprehenderit. Impedit quod vitae earum eveniet assumenda reprehenderit quibusdam facere! Enim nemo, totam nesciunt, porro quaerat, saepe ea voluptatem vel praesentium temporibus ab modi reprehenderit repellat! Saepe aut impedit blanditiis necessitatibus, rem eveniet corrupti architecto laborum nemo debitis sit incidunt officia dignissimos totam quae placeat vitae unde? Provident ipsam modi esse, alias, fugiat molestiae architecto facere rem quis nemo unde? Modi, dolor, voluptas quasi aspernatur dolores rem velit quia ullam animi asperiores commodi mollitia voluptatibus atque omnis recusandae.
+            {latestNews.map(news => (
+                <p key={news.id} className="mx-4">
+                    {news.title}
+                </p>
+            ))}
         </Marquee>
     </div>
   )
