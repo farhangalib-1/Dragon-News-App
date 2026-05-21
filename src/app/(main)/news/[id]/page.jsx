@@ -4,6 +4,19 @@ import React from 'react'
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const getNewsdetails = async (id) =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/news/${id}`);
+    const data = await res.json();
+    return data.data[0];
+   }
+   const newsData = await getNewsdetails(id);
+   return {
+    title: newsData.title,
+    description: newsData.details.slice(0, 160),
+   }
+}
 const Newsdetails = async ({ params }) => {
   const { id } = await params;
   const getNewsdetails = async (id) =>{
@@ -33,7 +46,7 @@ const Newsdetails = async ({ params }) => {
         
       </div>
         
-        <div className=" border col-span-3">
+        <div className="col-span-3">
                <div>
                  <h1 className="text-xl font-bold">Login with</h1>
                  <button className="btn mt-7  w-full py-1.75 text-blue-500 border border-blue-500 rounded-lg ">
